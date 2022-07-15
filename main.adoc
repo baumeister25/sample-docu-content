@@ -1,0 +1,10 @@
+:toc: left
+:toclevels: 3
+:sectnumlevels: 5
+:numbered:
+:icons: font
+
+# Docu
+include::architecture.adoc[leveloffset=+1]
+include::general.adoc[leveloffset=+1]
+include::guidelines.adoc[leveloffset=+1]
