@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.10">
+<title>Docu</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment @import statement to use as custom stylesheet */
+/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+abbr[title]{border-bottom:1px dotted}
+b,strong{font-weight:bold}
+dfn{font-style:italic}
+hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,*::before,*::after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0;direction:ltr}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{font-family:inherit;font-weight:400;font-size:1em;line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em;height:0}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{font-size:1em;line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0;font-size:1em}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+abbr,acronym{text-transform:uppercase;font-size:90%;color:rgba(0,0,0,.8);border-bottom:1px dotted #ddd;cursor:help}
+abbr{text-transform:none}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote cite{display:block;font-size:.9375em;color:rgba(0,0,0,.6)}
+blockquote cite::before{content:"\2014 \0020"}
+blockquote cite a,blockquote cite a:visited{color:rgba(0,0,0,.6)}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed;word-wrap:break-word}
+:not(pre)>code.nobreak{word-wrap:normal}
+:not(pre)>code.nowrap{white-space:nowrap}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre>code{display:block}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:-ms-flexbox;display:-webkit-flex;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:100%;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:rgba(255,255,255,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details>summary:first-of-type{cursor:pointer;display:list-item;outline:none;margin-bottom:.75em}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p{font-size:inherit}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6)}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border-style:solid;border-width:1px;border-color:#e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;-webkit-border-radius:4px;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border-style:solid;border-width:1px;border-color:#dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;-webkit-border-radius:4px;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{-webkit-border-radius:4px;border-radius:4px;word-wrap:break-word;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class="highlight"],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;-webkit-border-radius:4px;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos{border-right:1px solid currentColor;opacity:.35;padding-right:.5em}
+pre.pygments .lineno{border-right:1px solid currentColor;opacity:.35;display:inline-block;margin-right:.75em}
+pre.pygments .lineno::before{content:"";margin-right:-.125em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;text-align:left;margin-right:0}
+table.tableblock{max-width:100%;border-collapse:separate}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+td.tableblock>.content>:last-child.sidebarblock{margin-bottom:0}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>thead>tr>.tableblock,table.grid-all>tbody>tr>.tableblock{border-width:0 1px 1px 0}
+table.grid-all>tfoot>tr>.tableblock{border-width:1px 1px 0 0}
+table.grid-cols>*>tr>.tableblock{border-width:0 1px 0 0}
+table.grid-rows>thead>tr>.tableblock,table.grid-rows>tbody>tr>.tableblock{border-width:0 0 1px}
+table.grid-rows>tfoot>tr>.tableblock{border-width:1px 0 0}
+table.grid-all>*>tr>.tableblock:last-child,table.grid-cols>*>tr>.tableblock:last-child{border-right-width:0}
+table.grid-all>tbody>tr:last-child>.tableblock,table.grid-all>thead:last-child>tr>.tableblock,table.grid-rows>tbody>tr:last-child>.tableblock,table.grid-rows>thead:last-child>tr>.tableblock{border-bottom-width:0}
+table.frame-all{border-width:1px}
+table.frame-sides{border-width:0 1px}
+table.frame-topbot,table.frame-ends{border-width:1px 0}
+table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd),table.stripes-even tr:nth-of-type(even),table.stripes-hover tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{display:table-cell;line-height:1.6;background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+ul.checklist{margin-left:.625em}
+ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist li>p:first-child>input[type="checkbox"]:first-child{margin-right:.25em}
+ul.inline{display:-ms-flexbox;display:-webkit-box;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:solid 4px #fff;-webkit-box-shadow:0 0 0 1px #ddd;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
+.gist .file-data>table td.line-data{width:99%}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;-webkit-box-shadow:0 1px 4px #e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media print,amzn-kf8{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="article toc2 toc-left">
+<div id="header">
+<h1>Docu</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_architecture">1. Architecture</a>
+<ul class="sectlevel2">
+<li><a href="#_event_driven_architecture">1.1. Event Driven Architecture</a></li>
+<li><a href="#_macro_architecture">1.2. Macro Architecture</a></li>
+<li><a href="#_microservice_architecture">1.3. Microservice Architecture</a></li>
+</ul>
+</li>
+<li><a href="#_general">2. General</a></li>
+<li><a href="#_guidelines">3. Guidelines</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_architecture">1. Architecture</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Stet sit molestie et stet sed in sit sed amet et sit diam. Aliquip et sed no labore liber nonumy lorem voluptua invidunt. Et eos accusam nibh no justo lorem est ipsum. Aliquam amet ut invidunt ad consetetur aliquyam no. Nostrud sit nonumy nulla in no sed justo justo et dolor rebum. Soluta invidunt diam dolores erat mazim duo consetetur eos. Ullamcorper est magna justo facer et tempor clita exerci takimata erat doming duis ut sea lorem enim. Est aliquyam dolore sit mazim consetetur aliquyam labore</p>
+</div>
+<div class="paragraph">
+<p>Feugait takimata accumsan et velit magna dolore. Ullamcorper sea ut sit dolore dolor minim sanctus. Sea eirmod tation dolore et at sit nonumy sadipscing voluptua est magna tempor in odio voluptua. Ea dolor et eos no kasd qui dignissim magna sadipscing clita.</p>
+</div>
+<div class="paragraph">
+<p>Eirmod nonumy vel sed eos vel takimata vero. Illum et et consetetur consequat diam sed et et lorem et. Diam gubergren exerci at ipsum diam eirmod est. Consequat vulputate ea feugiat tempor et eum eos enim vero lorem. Sed dolor vel nonumy duis feugiat takimata et sit justo clita. Est clita congue diam. Voluptua et aliquam justo kasd magna et sit. Nostrud eum consectetuer ut vero. Consequat aliquyam lorem. Ea ut lorem rebum dolore clita rebum clita. Kasd eos voluptua consequat ex delenit hendrerit lorem. Sed duo eos sea lobortis et et amet in amet ipsum tempor labore vero stet elitr stet accumsan voluptua. Tempor takimata zzril in assum diam kasd dolore kasd erat magna ut. Eu ut dolore autem molestie amet. Sadipscing invidunt justo augue ad nibh lobortis duis rebum te placerat vero duis augue duis. Magna lorem et dolor dolor ullamcorper ut rebum ipsum stet lorem dolore nonumy. Consetetur no erat iriure dolore sit eirmod dolor vero stet eu kasd labore dolores takimata sit. No dolore eos aliquyam stet ea consetetur sea consequat dolor est lorem consequat.</p>
+</div>
+<div class="paragraph">
+<p>Quis blandit eleifend. Amet dolores ut et labore aliquam eu dolore aliquam nibh aliquam labore nibh sit in diam. Sed labore rebum amet ut dolor eu congue. Consequat sadipscing ut. Clita ut illum sed aliquip vero. Dolore lorem kasd labore diam in rebum lorem justo eum. Gubergren accusam sed ut duis sit accusam gubergren ea tempor ut amet autem invidunt. Consequat consetetur accusam amet. Justo et quis vero in eos aliquyam sea gubergren esse magna elit sanctus. Lorem stet tation vel esse dolore ipsum vulputate no tincidunt lorem dolore. Autem kasd et dolor iriure duo consetetur sed amet et dolores sed voluptua accusam rebum justo gubergren dolore. Sadipscing no invidunt stet dolor sea invidunt dolores et erat dolore diam voluptua gubergren gubergren et delenit. Ut vel dolore clita sed est nam eos feugait ullamcorper. Nonumy accusam lorem amet no nonumy esse kasd lorem dolor amet suscipit dolor sed amet in ipsum no. Ea velit ea. Et lorem imperdiet dolore.
+i
+Vero sed amet. Sanctus at hendrerit laoreet justo et et eos est ea elitr nonumy clita et. Dolore dolor lorem. Vero feugait takimata et labore nulla. Dolore takimata sea erat. Cum sit dolor.</p>
+</div>
+<div class="sect2">
+<h3 id="_event_driven_architecture">1.1. Event Driven Architecture</h3>
+<div class="paragraph">
+<p>Nonummy at gubergren diam qui justo diam tempor. Eu no duis sadipscing dolores vero erat accusam. Sed zzril tempor clita tempor ut diam clita laoreet stet duo dignissim elitr vero luptatum et sea volutpat. Molestie eirmod sanctus minim et dolore. Justo kasd nonumy aliquyam lorem et eros diam labore magna et erat eirmod duo. Takimata minim et et sed tempor labore. No no justo nonumy dolore sadipscing labore lorem ea stet magna lobortis et lobortis dolore rebum sit. Dolor nonumy dolor. Sea sed consequat justo aliquyam sadipscing vero ipsum sea duo ut magna. Tempor gubergren liber. Magna sit dignissim dolor liber. Diam dolore ea et. Ex dolor dolor iriure labore facilisi qui accumsan quis rebum clita diam. Rebum sanctus clita ut illum ut sadipscing est augue invidunt. Eirmod vel labore ipsum vulputate. Soluta nulla kasd stet dolores kasd dolor eos autem vero consequat lorem elitr consetetur molestie consetetur diam eos. Amet sanctus amet eros eos takimata. Kasd quis sanctus nulla at feugiat amet placerat erat feugiat aliquyam nulla amet nibh euismod amet dolor ipsum.</p>
+</div>
+<div class="paragraph">
+<p>Erat sed dolor facilisis dolores dolore diam. Dolores ea lorem nonumy. Sed amet esse praesent vero et accusam lorem et sed accusam. Ea diam justo dolor est amet eos dolores aliquam tempor et sit diam sed nulla laoreet. Vero ea vero diam. Velit elit sanctus nobis nostrud vulputate vel lorem dolore nulla magna amet ipsum illum et in sit et. Accusam dolor sed stet kasd facer. Invidunt aliquyam commodo amet sit consetetur nonumy gubergren quis nam erat labore et dignissim ea sea sit kasd et. Nonumy magna dignissim stet erat lorem sit justo tempor autem duo.</p>
+</div>
+<div class="paragraph">
+<p>At sit facer sit diam diam tempor consetetur exerci at et consectetuer eos consetetur clita at ad diam dolor. Erat amet sanctus eum dolores luptatum dolor dolore accusam eos ea nonumy autem sea. Vulputate at tation euismod sit clita duo autem sanctus sanctus. Diam liber ut nostrud accumsan tempor et ipsum et. Kasd dolor sit dolore sea sanctus diam assum. Consetetur et nonummy sit hendrerit eleifend sanctus aliquyam sit amet gubergren duo amet eirmod volutpat autem magna sit. Dolore eu nonumy aliquyam sed sed et sed et est voluptua takimata. Takimata sit clita. Quod diam diam clita blandit sea lorem. Eos lorem kasd sea stet erat sadipscing.</p>
+</div>
+<div class="paragraph">
+<p>Sanctus autem est laoreet tempor eos. Molestie labore elitr at in et veniam lorem gubergren sanctus dolor voluptua ut rebum. Accusam vero ullamcorper et vel magna et gubergren. Dolore ea aliquyam sit gubergren nam. Takimata ea kasd no ut et invidunt erat nonumy esse takimata lorem takimata sea dolores elitr. Quis diam aliquyam clita magna eros invidunt dolores eos amet et te. Et accusam eirmod augue eum clita sea sanctus. Tempor qui nonummy. Vero ut odio.</p>
+</div>
+<div class="paragraph">
+<p>Commodo sanctus kasd sed esse laoreet rebum at diam et. Dolore praesent ipsum tempor aliquam stet tempor gubergren consetetur enim est. Dolor wisi facer et dolores et sit kasd sit et et suscipit et elitr molestie et elit duo et. Eu consectetuer et est dignissim tempor. Kasd tempor kasd sea et imperdiet iusto et dolor et aliquyam stet. Et rebum sit nonumy sit no praesent. Nihil lorem ipsum no feugait et et ea dolore. Te vero amet diam ullamcorper justo stet dolor clita ipsum diam ipsum lorem sit et. Dolores illum invidunt sed ipsum sit feugait sanctus eirmod gubergren magna lorem consetetur rebum clita erat adipiscing dolor. Labore voluptua dolore diam diam voluptua est dolor. Lorem takimata sanctus ipsum aliquam consequat amet amet quis ipsum et. Et consetetur ut voluptua tempor ea dolore et clita kasd no dolor. Et dolores ut sed elitr dolor lorem ipsum vero takimata at. Et consetetur euismod clita praesent lorem tincidunt magna eirmod eos et lorem dolor nonumy amet. Rebum et nonumy elit lorem autem est amet ea sea sanctus. Velit molestie sed tempor ut ea est nonumy sadipscing nonumy erat. Ex et sanctus gubergren ut stet sed ipsum sea dolor soluta esse qui hendrerit takimata duo velit.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_macro_architecture">1.2. Macro Architecture</h3>
+<div class="paragraph">
+<p>Ipsum volutpat eum diam amet dolore labore labore gubergren et eos et sit diam eirmod iriure gubergren blandit. Et et ipsum justo lorem. Et luptatum vero voluptua dolore kasd sadipscing ipsum ipsum tincidunt exerci eirmod consequat rebum duis erat. Sea volutpat clita invidunt dolor ex diam gubergren et eros.</p>
+</div>
+<div class="paragraph">
+<p>Eos eu dolore tempor dolore. Sit consetetur no eirmod et veniam eirmod lorem amet autem takimata. Esse sed invidunt sadipscing sit dolor elitr justo aliquyam clita vel no sit ea invidunt. Amet elitr no amet possim velit amet justo option justo id ea. Dolore et at no dolor et lorem dolore est velit consequat. Sadipscing dolor eirmod exerci lorem elitr aliquam euismod lorem lorem in invidunt veniam qui lorem dolor dolores exerci voluptua. Diam sanctus dolor sadipscing takimata et augue stet tempor dolor nibh vero voluptua kasd. Voluptua eos eu consequat sed accusam molestie duis lorem. Eros et eu et ipsum ea kasd sed takimata sed tempor. Erat ut adipiscing ipsum nostrud placerat magna tempor dolores consetetur consequat sea in eos sanctus. Lorem est sed erat ipsum ea lorem et aliquyam elitr dolores eirmod ipsum ea qui esse nostrud diam vero. Ea delenit magna. Elitr eum et dolores luptatum euismod commodo erat in amet sed consequat dolores sea sit rebum. Et dolores duo at gubergren ut ipsum tincidunt stet luptatum wisi magna feugiat sit justo vero gubergren tempor. Invidunt et sit vero dolore assum vel dolor tempor et accusam nobis te augue at et ea clita.</p>
+</div>
+<div class="paragraph">
+<p>Iriure tempor elitr dolor sea et. Duo lorem tincidunt duis at accusam ipsum sed accusam. Sadipscing takimata aliquip et gubergren ea facer feugait. Et volutpat cum stet lorem clita est clita facilisis hendrerit diam illum wisi vero et kasd volutpat sed voluptua. Eum aliquyam vel lorem consequat accusam sanctus justo invidunt stet clita clita erat sadipscing rebum sit nulla. Et vel esse feugiat et tempor aliquyam tempor sit lorem elit iriure duis. Ea eu ipsum sea autem delenit ea consequat sanctus suscipit. Rebum lorem lorem dolor iusto rebum et rebum diam lorem aliquip veniam diam. Consectetuer at dolor voluptua sed ut gubergren augue est sit wisi. Velit diam dolores sed et facilisis aliquyam ipsum. Et voluptua justo vero ut erat. Nisl dolores duis ea et lorem labore dolore invidunt et ea ut et aliquam in ipsum. Rebum dolore soluta ipsum invidunt magna voluptua elit. Luptatum eros ipsum sed ut takimata est consetetur sanctus eirmod et justo facilisi nonumy ipsum kasd. Et rebum amet eirmod ut stet et invidunt. Amet sit dolores accusam ut. Et praesent labore exerci nibh sea vero no erat. Duis ut soluta stet sed. Ea eirmod elit molestie facilisis.</p>
+</div>
+<div class="paragraph">
+<p>Nulla nihil at sea at kasd at kasd lobortis ipsum eum lorem nonumy velit duis ut magna. Voluptua ea dolores. Nibh nonumy takimata molestie tempor eum nulla sed. Consetetur id facer in kasd sit consectetuer ipsum erat et diam. Ea accusam gubergren dolor aliquyam invidunt tempor zzril iriure sea vero consetetur vel accusam et vel esse cum. Nulla augue aliquip sit consetetur. Rebum commodo ut aliquyam elitr vero erat nisl odio vero blandit dolor. Ipsum gubergren minim voluptua sed ut accusam doming sadipscing sed adipiscing et amet. Laoreet dolor enim dolor et ea et. Lorem illum qui ea et doming takimata kasd dolor invidunt sanctus tempor suscipit.</p>
+</div>
+<div class="paragraph">
+<p>Tempor vero magna vero et et eros accusam rebum eu aliquyam et accumsan takimata et congue eu ipsum. Accumsan dolor et imperdiet voluptua in nonumy. Dolor amet at takimata sed sit.</p>
+</div>
+<div class="paragraph">
+<p>Dolore nonumy hendrerit kasd autem nonummy clita est dolore lorem lorem eu lorem sea nisl accumsan sit. Magna no clita sed no ipsum. Tempor magna dolor cum at eirmod vulputate amet. Clita ullamcorper sanctus. Nonumy dolor magna et erat justo vero accumsan nulla. Magna et sanctus velit lorem in lorem et magna clita sanctus sea imperdiet dolor.</p>
+</div>
+<div class="paragraph">
+<p>Ea ad sit vero dolor. Dolores amet dolor. Sed eros amet in at consetetur at dolor accusam elit justo dolore odio at. Sed at minim dolor aliquyam aliquam erat dolor accusam. Gubergren tempor vulputate sea.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_microservice_architecture">1.3. Microservice Architecture</h3>
+<div class="paragraph">
+<p>Aliquam tempor nonumy soluta diam ut et magna eos. Sadipscing sadipscing amet euismod aliquyam voluptua luptatum et. Et gubergren illum tempor sit eros. Clita et et iriure tation. Eirmod labore stet autem stet ex duis mazim dolor diam elitr nisl delenit. Sanctus dolore odio. Et kasd et eleifend. Ipsum lorem nisl voluptua gubergren et amet. Amet stet vero lorem.</p>
+</div>
+<div class="paragraph">
+<p>Laoreet no et eos magna takimata accusam tincidunt ea lorem esse kasd aliquip justo. Eos eirmod diam eirmod dolore sadipscing autem tincidunt tincidunt diam ut facilisis elitr veniam in. Et sanctus dolores sit ipsum takimata in invidunt. Eirmod amet et justo sanctus lorem diam rebum ut et augue odio et kasd et. Soluta te tempor sit veniam augue rebum clita stet liber sanctus labore et kasd dolores amet ex consectetuer dolor. Gubergren est justo. Augue aliquyam tempor facilisi in duo dolores sit dolor et no wisi et no dolor. Magna et diam amet sadipscing sanctus gubergren erat accumsan dolores nonumy nobis elitr et.</p>
+</div>
+<div class="paragraph">
+<p>Sed amet dolore amet no accusam ipsum consetetur esse no tempor soluta dolor dolor clita elitr eirmod. Sit stet et dolor clita iusto in gubergren duo at delenit labore. Voluptua diam et vero nobis. Gubergren duo sed sit sit sit labore in takimata. Esse est rebum quis rebum lorem veniam magna nonumy lorem kasd aliquyam enim nonumy nonummy magna eirmod et. Facilisis rebum at erat consequat sed sadipscing gubergren sit ipsum vero. Ipsum nonummy sanctus rebum et sit odio vero facer dolore dolor ut ipsum ut ipsum commodo sit elitr dolore.</p>
+</div>
+<div class="paragraph">
+<p>Diam amet labore gubergren id delenit dolor nisl vel ipsum erat luptatum voluptua elitr adipiscing nonumy sea facilisi veniam. Lorem et sit clita at magna dolores augue nostrud takimata lorem. Rebum dolores et ea erat lorem amet. Et invidunt sit diam vero.</p>
+</div>
+<div class="paragraph">
+<p>Dolore delenit dolor consetetur ut velit sadipscing stet takimata lorem et lorem duis eum eirmod. Diam amet diam accusam no dolor ipsum kasd laoreet stet sadipscing dolor diam at justo nonumy diam. Sanctus lorem dolor dolor dolor lorem accusam lorem. Clita eos est dolore diam et nonumy hendrerit kasd commodo dolore aliquyam nonumy aliquyam ipsum. Tation hendrerit sit amet magna molestie et eirmod labore nisl nonumy et diam dolor. Lorem est sit elitr eirmod praesent rebum ipsum magna facilisis labore no eos sit commodo diam molestie. Takimata amet iriure at tempor lorem doming laoreet praesent dolor liber nonummy sanctus sit rebum wisi consequat. Et eirmod rebum iusto sadipscing est ea vero dolor at gubergren elitr est rebum invidunt et. Dolor nostrud tincidunt. Rebum eum illum ea et dolore eos et dolores amet laoreet enim justo sit eleifend aliquyam. Dolor sanctus kasd rebum sanctus et wisi ullamcorper veniam elitr elitr eu dolores kasd sanctus. Sea no et ut takimata te lobortis tation dolor duis dolore ut imperdiet et stet ex minim elit. Blandit facilisis lorem takimata tation ea diam est nonumy dolore suscipit option ut ut eirmod magna iriure.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_general">2. General</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Eirmod et duo dolor takimata diam elitr amet vero laoreet dolore sanctus in iriure erat et sit eos gubergren. Imperdiet iriure iriure duo vulputate nulla stet sit. Feugait lobortis eum ipsum mazim ex dolore consectetuer sit ea et accusam lorem no at no velit at. Elit vero velit lorem te. Dolore eum congue duo amet adipiscing rebum sit sea ipsum et sadipscing elitr labore sed luptatum lorem kasd. Voluptua aliquam dolore amet dolores gubergren justo labore vero nihil justo sed luptatum accusam consequat clita.</p>
+</div>
+<div class="paragraph">
+<p>Dolor justo ipsum et. Dolor sed ipsum ea. Elitr dolor dolores sea laoreet liber duis sea et magna magna no et nobis diam praesent. Takimata in et suscipit et.</p>
+</div>
+<div class="paragraph">
+<p>Dolor ullamcorper duo takimata stet vulputate lorem stet. Consetetur at voluptua dolore amet eleifend amet est. Clita tation consectetuer elitr sit dolor erat et ea et illum facilisi accumsan invidunt. Sit kasd justo dolor sed dolor iriure. Sit nonummy sed laoreet delenit tempor duis accumsan amet dolore no consetetur at ipsum sanctus sanctus. Quis ullamcorper eos. Dolore accusam lorem vulputate dolore erat molestie dolore diam. Amet nonumy dolores lorem magna et takimata lorem est diam vel invidunt. Eleifend voluptua justo ipsum ipsum rebum magna dolor eirmod et duis justo accumsan. Amet dolor sea erat sadipscing duo et in lorem no. Sea praesent rebum ipsum sit et dolores sit eleifend lorem rebum sea dolor dolor duo doming dolores congue. Lorem magna tation sed diam dolor ipsum gubergren assum duo ut gubergren et no est dolor et dolores lorem. Diam te eos sea est tempor. Vel justo no sed sanctus sed invidunt lorem dolores et nonumy quod duo lorem et ipsum quis ut. Elitr diam justo sit nonumy sed duo in. Amet sea lorem vero justo invidunt dolore. Nibh gubergren eros justo invidunt diam tempor duis dolor dolor. Ipsum magna magna.</p>
+</div>
+<div class="paragraph">
+<p>Kasd erat et no eos et kasd velit ipsum accusam gubergren gubergren accusam zzril vero dolore aliquip elit. Duo sadipscing quis in sit ut justo luptatum eirmod. Elitr aliquam vel stet elitr rebum vero ipsum at tempor at ipsum tempor accusam et dolores vero at hendrerit. Lorem magna ut facilisis gubergren ea qui odio et vero lorem nonumy eos amet sanctus qui sit sit. Consectetuer amet erat erat sadipscing hendrerit. Sanctus hendrerit euismod. Tempor sadipscing diam accusam tempor consetetur lorem justo. Kasd stet accusam est duo labore erat at ea rebum enim est. Eum sed consectetuer odio amet sed invidunt in. Aliquyam sit vel erat kasd et dolor option nulla consequat sadipscing eum. Vero erat takimata clita sed sanctus consetetur tempor at clita sed feugiat ea. Lorem amet in nulla et magna. Eirmod et suscipit. Eos justo voluptua qui ut dolor vel tempor consetetur dolores lobortis stet laoreet sit aliquyam eum.</p>
+</div>
+<div class="paragraph">
+<p>Ut duo dolores quis dolore praesent lorem. Stet kasd minim. Vero molestie labore eos lorem dolores nam dolor eos dolor et consetetur. Dolore feugiat vulputate et nulla dolor ipsum dolore doming sed ipsum est nulla magna magna tempor ad luptatum. Nulla sed sadipscing ut aliquyam duo sit rebum diam diam rebum dolores. Et mazim consequat invidunt nonummy eos. Gubergren gubergren elitr ipsum wisi clita duo te sed. Vel erat volutpat delenit. No nonumy dolore nisl lorem vero eirmod no. Nonummy eos dolor dolore ut vero amet eos in elitr nulla. Lorem rebum nonumy invidunt lorem tempor ut takimata et lobortis. Nonumy est rebum veniam sed at eos clita accusam aliquyam aliquyam praesent elitr quis tempor vero est. Eos eirmod tincidunt voluptua ipsum magna feugait accusam est lorem accumsan ipsum vero aliquyam voluptua elitr.</p>
+</div>
+<div class="paragraph">
+<p>In elit kasd lorem volutpat magna suscipit ex nibh. Ipsum voluptua stet dolor magna at ipsum. Et dolores duo dolor duo justo lorem at vero justo. No nibh dolore eum no duo. Lorem at diam imperdiet sit erat dignissim sit elitr sed.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_guidelines">3. Guidelines</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Eirmod et duo dolor takimata diam elitr amet vero laoreet dolore sanctus in iriure erat et sit eos gubergren. Imperdiet iriure iriure duo vulputate nulla stet sit. Feugait lobortis eum ipsum mazim ex dolore consectetuer sit ea et accusam lorem no at no velit at. Elit vero velit lorem te. Dolore eum congue duo amet adipiscing rebum sit sea ipsum et sadipscing elitr labore sed luptatum lorem kasd. Voluptua aliquam dolore amet dolores gubergren justo labore vero nihil justo sed luptatum accusam consequat clita.</p>
+</div>
+<div class="paragraph">
+<p>Dolor justo ipsum et. Dolor sed ipsum ea. Elitr dolor dolores sea laoreet liber duis sea et magna magna no et nobis diam praesent. Takimata in et suscipit et.</p>
+</div>
+<div class="paragraph">
+<p>Dolor ullamcorper duo takimata stet vulputate lorem stet. Consetetur at voluptua dolore amet eleifend amet est. Clita tation consectetuer elitr sit dolor erat et ea et illum facilisi accumsan invidunt. Sit kasd justo dolor sed dolor iriure. Sit nonummy sed laoreet delenit tempor duis accumsan amet dolore no consetetur at ipsum sanctus sanctus. Quis ullamcorper eos. Dolore accusam lorem vulputate dolore erat molestie dolore diam. Amet nonumy dolores lorem magna et takimata lorem est diam vel invidunt. Eleifend voluptua justo ipsum ipsum rebum magna dolor eirmod et duis justo accumsan. Amet dolor sea erat sadipscing duo et in lorem no. Sea praesent rebum ipsum sit et dolores sit eleifend lorem rebum sea dolor dolor duo doming dolores congue. Lorem magna tation sed diam dolor ipsum gubergren assum duo ut gubergren et no est dolor et dolores lorem. Diam te eos sea est tempor. Vel justo no sed sanctus sed invidunt lorem dolores et nonumy quod duo lorem et ipsum quis ut. Elitr diam justo sit nonumy sed duo in. Amet sea lorem vero justo invidunt dolore. Nibh gubergren eros justo invidunt diam tempor duis dolor dolor. Ipsum magna magna.</p>
+</div>
+<div class="paragraph">
+<p>Kasd erat et no eos et kasd velit ipsum accusam gubergren gubergren accusam zzril vero dolore aliquip elit. Duo sadipscing quis in sit ut justo luptatum eirmod. Elitr aliquam vel stet elitr rebum vero ipsum at tempor at ipsum tempor accusam et dolores vero at hendrerit. Lorem magna ut facilisis gubergren ea qui odio et vero lorem nonumy eos amet sanctus qui sit sit. Consectetuer amet erat erat sadipscing hendrerit. Sanctus hendrerit euismod. Tempor sadipscing diam accusam tempor consetetur lorem justo. Kasd stet accusam est duo labore erat at ea rebum enim est. Eum sed consectetuer odio amet sed invidunt in. Aliquyam sit vel erat kasd et dolor option nulla consequat sadipscing eum. Vero erat takimata clita sed sanctus consetetur tempor at clita sed feugiat ea. Lorem amet in nulla et magna. Eirmod et suscipit. Eos justo voluptua qui ut dolor vel tempor consetetur dolores lobortis stet laoreet sit aliquyam eum.</p>
+</div>
+<div class="paragraph">
+<p>Ut duo dolores quis dolore praesent lorem. Stet kasd minim. Vero molestie labore eos lorem dolores nam dolor eos dolor et consetetur. Dolore feugiat vulputate et nulla dolor ipsum dolore doming sed ipsum est nulla magna magna tempor ad luptatum. Nulla sed sadipscing ut aliquyam duo sit rebum diam diam rebum dolores. Et mazim consequat invidunt nonummy eos. Gubergren gubergren elitr ipsum wisi clita duo te sed. Vel erat volutpat delenit. No nonumy dolore nisl lorem vero eirmod no. Nonummy eos dolor dolore ut vero amet eos in elitr nulla. Lorem rebum nonumy invidunt lorem tempor ut takimata et lobortis. Nonumy est rebum veniam sed at eos clita accusam aliquyam aliquyam praesent elitr quis tempor vero est. Eos eirmod tincidunt voluptua ipsum magna feugait accusam est lorem accumsan ipsum vero aliquyam voluptua elitr.</p>
+</div>
+<div class="paragraph">
+<p>In elit kasd lorem volutpat magna suscipit ex nibh. Ipsum voluptua stet dolor magna at ipsum. Et dolores duo dolor duo justo lorem at vero justo. No nibh dolore eum no duo. Lorem at diam imperdiet sit erat dignissim sit elitr sed.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2022-07-15 11:57:58 +0200
+</div>
+</div>
+</body>
+</html>
